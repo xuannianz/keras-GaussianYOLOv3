@@ -269,7 +269,7 @@ if __name__ == '__main__':
         anchors_path='voc_anchors_416.txt',
         **common_args
     )
-    model_path = 'checkpoints/2019-11-15/pascal_21_9.4463_12.8289_0.8334_0.8535.h5'
+    model_path = 'checkpoints/pascal_21_9.4463_12.8289_0.8334_0.8535.h5'
     input_shape = (test_generator.image_size, test_generator.image_size)
     anchors = test_generator.anchors
     num_classes = test_generator.num_classes()

@@ -4,13 +4,18 @@ Thanks for their hard work.
 The official implementation is [jwchoi384/Gaussian_YOLOv3](https://github.com/jwchoi384/Gaussian_YOLOv3)
 
 As in the official implementation, there is a hyper parameter `sigma_const`. I get best result on Pascal VOC when set it to be 0.3.
-The best result (0.8535) is a little better than the one (0.8500) I got by original YOLOv3. I can not determine if the promotion comes from random training or benefits from Gaussian logic.
+The best result (mAP<sub>50</sub> 0.8535) is a little better than the one (mAP<sub>50</sub> 0.8500) I got by original YOLOv3. I am not sure if the improvement comes from random training or benefits from Gaussian logic.
 
 ## Test
 1. I trained on Pascal VOC2012 trainval.txt + Pascal VOC2007 train.txt, and validated on Pascal VOC2007 val.txt. There are 14041 images for training and 2510 images for validation.
 2. The best evaluation result (score_threshold=0.01, mAP<sub>50</sub>, image_size=416, sigma_const=0.3) on VOC2007 test is 0.8535. 
 3. Pretrained official yolo weights on COCO and gaussian yolo weights on Pascal VOC are here. [baidu netdisk](https://pan.baidu.com/s/1ZgSPGt0UEWk3tDW16kbfPQ), extract code: qgnd
 4. `python3 yolo/inference.py` to test your image by specifying image path and model path there. 
+
+  
+![image1](test/004456.jpg) 
+![image2](test/006283.jpg)
+![image3](test/006334.jpg)
 
 ## Train
 ### build dataset (Pascal VOC, other types please refer to [fizyr/keras-retinanet](https://github.com/fizyr/keras-retinanet))
