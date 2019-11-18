@@ -9,7 +9,8 @@ The best result (mAP<sub>50</sub> 0.8535) is a little better than the one (mAP<s
 ## Test
 1. I trained on Pascal VOC2012 trainval.txt + Pascal VOC2007 train.txt, and validated on Pascal VOC2007 val.txt. There are 14041 images for training and 2510 images for validation.
 2. The best evaluation result (score_threshold=0.01, mAP<sub>50</sub>, image_size=416, sigma_const=0.3) on VOC2007 test is 0.8535. 
-3. Pretrained official yolo weights on COCO and gaussian yolo weights on Pascal VOC are here. [baidu netdisk](https://pan.baidu.com/s/1ZgSPGt0UEWk3tDW16kbfPQ), extract code: qgnd
+3. Pretrained official yolo weights on COCO and gaussian yolo weights on Pascal VOC are here.   
+[baidu netdisk](https://pan.baidu.com/s/1ZgSPGt0UEWk3tDW16kbfPQ) extract code: qgnd [google driver](https://drive.google.com/open?id=1PwmVx1jct9ee2o2_m_lXObkyN3fSHo08)
 4. `python3 yolo/inference.py` to test your image by specifying image path and model path there. 
 
   
