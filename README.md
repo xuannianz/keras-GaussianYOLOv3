@@ -4,7 +4,7 @@ Thanks for their hard work.
 The official implementation is [jwchoi384/Gaussian_YOLOv3](https://github.com/jwchoi384/Gaussian_YOLOv3)
 
 As in the official implementation, there is a hyper parameter `sigma_const`. I get best result on Pascal VOC when set it to be 0.3.
-The best result (mAP<sub>50</sub> 0.8535) is a little better than the one (mAP<sub>50</sub> 0.8500) I got by original YOLOv3. I am not sure if the improvement comes from random training or benefits from Gaussian logic.
+The best result (mAP<sub>50</sub> 0.8535) is a little better than the one (mAP<sub>50</sub> 0.8500) I got by original YOLOv3. I am not sure whether the improvement is due to random training or benefits from Gaussian logic.
 
 ## Test
 1. I trained on Pascal VOC2012 trainval.txt + Pascal VOC2007 train.txt, and validated on Pascal VOC2007 val.txt. There are 14041 images for training and 2510 images for validation.
@@ -26,6 +26,6 @@ The best result (mAP<sub>50</sub> 0.8535) is a little better than the one (mAP<s
 ### train
 * **STEP1**: `python3 train.py --freeze-body yolo --gpu 0 --batch-size 32 --random-transform pascal datasets/VOC2012` to start training with lr=1e-3 then stop when val mAP keep dropping.
 * **STEP2**: `python3 train.py --snapshot <xxx> --freeze-body darknet --gpu 0 --batch-size 32 --random-transform pascal datasets/VOC2012` to start training with lr=1e-4 then top when val mAP keep dropping.
-* **STEP3**: `python3 train.py --snapshot <xxx> --freeze-body none --gpu 0 --batch-size 32 --random-transform pascal datasets/VOC2012` to start training with lr=1e-5 and then set lr=1e-6 when val mAP when dropping.
+* **STEP3**: `python3 train.py --snapshot <xxx> --freeze-body none --gpu 0 --batch-size 32 --random-transform pascal datasets/VOC2012` to start training with lr=1e-5 and then set lr=1e-6 when val mAP when keep dropping.
 ## Evaluate
 * `python3 eval/common.py` to evaluate by specifying model path there.
