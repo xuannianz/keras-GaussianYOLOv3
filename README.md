@@ -24,8 +24,8 @@ The best result (mAP<sub>50</sub> 0.8535) is a little better than the one (mAP<s
 * Append VOC2007 train.txt to VOC2012 trainval.txt.
 * Overwrite VOC2012 val.txt by VOC2007 val.txt.
 ### train
-* **STEP1**: `python3 train.py --freeze-body yolo --gpu 0 --batch-size 32 --random-transform pascal datasets/VOC2012` to start training with lr=1e-3 then stop when val mAP keep dropping.
-* **STEP2**: `python3 train.py --snapshot <xxx> --freeze-body darknet --gpu 0 --batch-size 32 --random-transform pascal datasets/VOC2012` to start training with lr=1e-4 then top when val mAP keep dropping.
-* **STEP3**: `python3 train.py --snapshot <xxx> --freeze-body none --gpu 0 --batch-size 32 --random-transform pascal datasets/VOC2012` to start training with lr=1e-5 and then set lr=1e-6 when val mAP when keep dropping.
+* **STEP1**: `python3 train.py --freeze-body yolo --gpu 0 --batch-size 32 --random-transform --compute-val-loss pascal datasets/VOC2012` to start training with lr=1e-3 then stop when val mAP keep dropping.
+* **STEP2**: `python3 train.py --snapshot <xxx> --freeze-body darknet --gpu 0 --batch-size 32 --random-transform --compute-val-loss pascal datasets/VOC2012` to start training with lr=1e-4 then top when val mAP keep dropping.
+* **STEP3**: `python3 train.py --snapshot <xxx> --freeze-body none --gpu 0 --batch-size 32 --random-transform --compute-val-loss pascal datasets/VOC2012` to start training with lr=1e-5 and then set lr=1e-6 when val mAP when keep dropping.
 ## Evaluate
 * `python3 eval/common.py` to evaluate by specifying model path there.
